@@ -1,0 +1,61 @@
+CREATE TABLE `countries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `countries` (`id`, `name`, `code`, `created_at`, `updated_at`) VALUES
+(1, 'Canada', 'CA', NULL, NULL),
+(2, 'Australia', 'AU', NULL, NULL),
+(3, 'Germany', 'DE', NULL, NULL),
+(4, 'France', 'FR', NULL, NULL);
+
+CREATE TABLE `states` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `country_id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `states` (`id`, `country_id`, `name`, `created_at`, `updated_at`) VALUES
+(1, '1', 'Ontario', NULL, NULL),
+(2, '1', 'Quebec', NULL, NULL),
+(3, '1', 'British Columbia', NULL, NULL),
+(4, '2', 'New South Wales', NULL, NULL),
+(5, '2', 'Victoria', NULL, NULL),
+(6, '2', 'Queensland', NULL, NULL),
+(7, '3', 'Bavaria', NULL, NULL),
+(8, '3', 'North Rhine-Westphalia', NULL, NULL),
+(9, '3', 'Baden-Württemberg', NULL, NULL),
+(10, '4', 'Île-de-France', NULL, NULL),
+(11, '4', 'Auvergne-Rhône-Alpes', NULL, NULL),
+(12, '4', 'Provence-Alpes-Côte d\'Azur', NULL, NULL);
+
+
+
+CREATE TABLE `cities` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `state_id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `cities` (`id`, `state_id`, `name`, `created_at`, `updated_at`) VALUES
+(1, '8', 'Munich', NULL, NULL),
+(2, '8', 'Nuremberg', NULL, NULL),
+(3, '9', 'Cologne', NULL, NULL),
+(4, '9', 'Düsseldorf', NULL, NULL),
+(5, '10', 'Stuttgart', NULL, NULL),
+(6, '10', 'Karlsruhe', NULL, NULL),
+(7, '11', 'Paris', NULL, NULL),
+(8, '11', 'Marseille', NULL, NULL),
+(9, '12', 'Lyon', NULL, NULL),
+(10, '12', 'Grenoble', NULL, NULL),
+(11, '13', 'Sydney', NULL, NULL),
+(12, '13', 'Melbourne', NULL, NULL),
+(13, '14', 'Toronto', NULL, NULL),
+(14, '14', 'Ottawa', NULL, NULL);
